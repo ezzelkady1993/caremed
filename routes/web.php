@@ -56,6 +56,8 @@ Route::get('/admin/addminresearch','ServicesController@addminresearch')->name('s
 
 Route::post('/admin/addResearch','ServicesController@addResearch')->name('service.addResearch');
 
+Route::post('/problem','FrontController@problem')->name('front.problem');
+
 Auth::routes();
 
 Route::get('/logout','auth\LoginController@logout');

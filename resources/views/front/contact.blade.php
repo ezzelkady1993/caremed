@@ -49,19 +49,37 @@
 				<!-- Contact Form -->
 				<div class="col-lg-6 form_col">
 					<div class="contact_form_container">
-						<form action="#" id="contact_form" class="contact_form">
-							<div class="row">
-								<div class="col-md-6 input_col">
-									<div class="input_container input_name"><input type="text" class="contact_input" placeholder="Name" required="required"></div>
+						<div class="contact_form" id='contact_form'>
+							{!! Form::open(['route' => 'front.problem','method'=>'post']) !!}
+								<div class="row">
+									<div class="col-md-6 input_col">
+										<div class="input_container input_name">
+											{{ Form::label('name' , 'Name') }}
+											{{ Form::text('name' , null,array('class'=>
+											'contact_input','required'=>'','min-length'=>'5')) }}
+										</div>
+									</div>
+									<div class="col-md-6 input_col">
+										<div class="input_container input_name">
+											{{ Form::label('email' , 'E-mail') }}
+											{{ Form::text('email' , null,array('class'=>
+											'contact_input','required'=>'','min-length'=>'5')) }}
+										</div>
+									</div>
 								</div>
-								<div class="col-md-6 input_col">
-									<div class="input_container"><input type="email" class="contact_input" placeholder="E-mail" required="required"></div>
+								<div class="input_container">
+									{{ Form::label('subject' , 'Subject') }}
+									{{ Form::text('subject' , null,array('class'=>
+									'contact_input','required'=>'','min-length'=>'5')) }}
 								</div>
-							</div>
-							<div class="input_container"><input type="text" class="contact_input" placeholder="Subject" required="required"></div>
-							<div class="input_container"><textarea class="contact_input contact_text_area" placeholder="Message" required="required"></textarea></div>
-							<button class="button contact_button"><a href="#">send</a></button>
-						</form>
+								<div class="input_container">
+									{{ Form::label('problem' , 'Message') }}
+									{{ Form::textarea('subject' , null,array('class'=>
+									'contact_input contact_text_area' ,'required'=>'','min-length'=>'5')) }}
+								</div>
+								{{ Form::button('Send' , array('class'=>'button contact_button')) }}
+							{!! Form::close() !!}
+						</div>
 					</div>
 				</div>
 			</div>
